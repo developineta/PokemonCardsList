@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="agh-6G-xgt">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pokémon List-->
+        <scene sceneID="xdw-sL-WbD">
+            <objects>
+                <viewController id="3QE-QI-tSy" customClass="PokemonViewController" customModule="PokemonCardsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1gH-sX-83K">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-bF-lwU">
+                                <rect key="frame" x="0.0" y="88" width="428" height="876"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokeyCell" rowHeight="301" id="gAW-HC-KFx" customClass="PokeyTableViewCell" customModule="PokemonCardsList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="301"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gAW-HC-KFx" id="O04-k7-cLu">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="301"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="KNc-jp-eh1">
+                                                    <rect key="frame" x="20" y="48" width="388" height="205"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-ZJ-OZU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="191" height="205"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-7l-dId">
+                                                            <rect key="frame" x="234" y="0.0" width="154" height="205"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ox9-nv-g3W">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="40"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="154" id="Avg-4O-ySO"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="ncs-Zu-q5d"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supertype" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67W-gD-hNY">
+                                                                    <rect key="frame" x="0.0" y="55" width="154" height="40"/>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtype" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmy-eK-BL5">
+                                                                    <rect key="frame" x="0.0" y="110" width="154" height="40"/>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTR-xG-eef">
+                                                                    <rect key="frame" x="0.0" y="165" width="154" height="40"/>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KNc-jp-eh1" firstAttribute="centerY" secondItem="O04-k7-cLu" secondAttribute="centerY" id="DGj-it-p4w"/>
+                                                <constraint firstItem="KNc-jp-eh1" firstAttribute="centerX" secondItem="O04-k7-cLu" secondAttribute="centerX" id="Jr4-0G-R8L"/>
+                                                <constraint firstItem="KNc-jp-eh1" firstAttribute="leading" secondItem="O04-k7-cLu" secondAttribute="leadingMargin" id="OPb-qA-wFA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="hpLabel" destination="mTR-xG-eef" id="jHz-st-yAr"/>
+                                            <outlet property="nameLabel" destination="Ox9-nv-g3W" id="p81-qG-1yr"/>
+                                            <outlet property="pokeyImageView" destination="tWK-ZJ-OZU" id="TOC-Aa-eOJ"/>
+                                            <outlet property="subtypeLabel" destination="fmy-eK-BL5" id="2yM-Bi-vEb"/>
+                                            <outlet property="supertypeLabel" destination="67W-gD-hNY" id="uMG-Zh-dLh"/>
+                                            <segue destination="2xo-4h-oPM" kind="show" id="ada-c6-QBs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C2T-wQ-1S3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ydd-bF-lwU" firstAttribute="top" secondItem="C2T-wQ-1S3" secondAttribute="top" id="43f-8j-Zsm"/>
+                            <constraint firstItem="C2T-wQ-1S3" firstAttribute="bottom" secondItem="Ydd-bF-lwU" secondAttribute="bottom" constant="-72" id="BwG-Om-GXw"/>
+                            <constraint firstItem="Ydd-bF-lwU" firstAttribute="leading" secondItem="C2T-wQ-1S3" secondAttribute="leading" id="o91-J3-nEk"/>
+                            <constraint firstItem="C2T-wQ-1S3" firstAttribute="trailing" secondItem="Ydd-bF-lwU" secondAttribute="trailing" id="rRM-GM-CG3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pokémon List" id="csw-ZL-wN2"/>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="Ydd-bF-lwU" id="bJ7-uE-DIc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyQ-GQ-Ji3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434.78260869565219" y="-31.473214285714285"/>
+        </scene>
+        <!--Pokey Detail View Controller-->
+        <scene sceneID="Ila-9r-w8B">
+            <objects>
+                <viewController id="2xo-4h-oPM" customClass="PokeyDetailViewController" customModule="PokemonCardsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JCJ-BO-eCO">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="daG-3J-evf">
+                                <rect key="frame" x="115.66666666666669" y="272" width="197" height="402"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuA-Jd-xf5">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="197" id="Ro0-lX-cUW"/>
+                                            <constraint firstAttribute="height" constant="33" id="fDE-Yy-tux"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KnV-hP-bQO">
+                                        <rect key="frame" x="0.0" y="41" width="197" height="238"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="238" id="093-wW-hnn"/>
+                                            <constraint firstAttribute="width" constant="197" id="n00-GW-Ree"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lFH-Fx-Bfw">
+                                        <rect key="frame" x="0.0" y="287" width="197" height="115"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supertype" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-8J-CL6">
+                                                <rect key="frame" x="0.0" y="0.0" width="197" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="6l6-jR-Mqy"/>
+                                                    <constraint firstAttribute="width" constant="197" id="w9y-eG-r1Z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtype" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKg-xp-kK4">
+                                                <rect key="frame" x="0.0" y="41" width="197" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="6zr-Xw-kgh"/>
+                                                    <constraint firstAttribute="width" constant="197" id="k0R-7A-5yl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38G-ri-6uq">
+                                                <rect key="frame" x="0.0" y="82" width="197" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="197" id="pp8-QJ-ydm"/>
+                                                    <constraint firstAttribute="height" constant="33" id="xt1-Gb-AsM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6pz-BB-5Af"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="daG-3J-evf" firstAttribute="centerX" secondItem="6pz-BB-5Af" secondAttribute="centerX" id="cnY-JF-6bj"/>
+                            <constraint firstItem="daG-3J-evf" firstAttribute="centerY" secondItem="6pz-BB-5Af" secondAttribute="centerY" constant="-17" id="gKH-bg-Lz1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aLi-mo-QD7"/>
+                    <connections>
+                        <outlet property="pokeyHp" destination="38G-ri-6uq" id="IU0-hc-6xw"/>
+                        <outlet property="pokeyImage" destination="KnV-hP-bQO" id="vXS-3I-CkR"/>
+                        <outlet property="pokeyName" destination="yuA-Jd-xf5" id="pqT-RH-wMK"/>
+                        <outlet property="pokeySubtype" destination="LKg-xp-kK4" id="kGU-un-wTO"/>
+                        <outlet property="pokeySupertype" destination="gtZ-8J-CL6" id="8EE-pg-TTR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCD-dX-68Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5" y="-32.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jwc-Jf-xrt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="agh-6G-xgt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ve6-zu-RFw">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3QE-QI-tSy" kind="relationship" relationship="rootViewController" id="gF6-tv-5SM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZS-iv-6ex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475.36231884057975" y="-31.473214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
