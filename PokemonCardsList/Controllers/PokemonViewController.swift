@@ -52,7 +52,6 @@ class PokemonViewController: UIViewController {
 
 }
 
-
 extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,9 +73,11 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath =  tableViewOutlet.indexPathForSelectedRow {
-            let detailVC = segue.destination as! PokeyDetailViewController
-            detailVC.poke = pokey[indexPath.row]
+        if segue.identifier == "pokey" {
+        guard let destinationVC = segue.destination as? PokeyDetailViewController,
+              let row = tableViewOutlet.indexPathForSelectedRow?.row else {return}
+        // Pass the selected object to the new view controller.
+        destinationVC.poke = pokey[row]
         }
     }
 }

@@ -30,7 +30,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="KNc-jp-eh1">
                                                     <rect key="frame" x="20" y="48" width="388" height="205"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-ZJ-OZU">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poke" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-ZJ-OZU">
                                                             <rect key="frame" x="0.0" y="0.0" width="191" height="205"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-7l-dId">
@@ -42,7 +42,7 @@
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="154" id="Avg-4O-ySO"/>
                                                                         <constraint firstAttribute="height" constant="40" id="ncs-Zu-q5d"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -81,10 +81,14 @@
                                             <outlet property="pokeyImageView" destination="tWK-ZJ-OZU" id="TOC-Aa-eOJ"/>
                                             <outlet property="subtypeLabel" destination="fmy-eK-BL5" id="2yM-Bi-vEb"/>
                                             <outlet property="supertypeLabel" destination="67W-gD-hNY" id="uMG-Zh-dLh"/>
-                                            <segue destination="2xo-4h-oPM" kind="show" id="ada-c6-QBs"/>
+                                            <segue destination="2xo-4h-oPM" kind="show" identifier="pokey" id="ada-c6-QBs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3QE-QI-tSy" id="0ny-gQ-X9C"/>
+                                    <outlet property="delegate" destination="3QE-QI-tSy" id="OIc-4l-Bc7"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C2T-wQ-1S3"/>
@@ -113,83 +117,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="daG-3J-evf">
-                                <rect key="frame" x="115.66666666666669" y="272" width="197" height="402"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ceY-0Z-hBc">
+                                <rect key="frame" x="82.666666666666686" y="287" width="263" height="411"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuA-Jd-xf5">
-                                        <rect key="frame" x="0.0" y="0.0" width="197" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="263" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="197" id="Ro0-lX-cUW"/>
-                                            <constraint firstAttribute="height" constant="33" id="fDE-Yy-tux"/>
+                                            <constraint firstAttribute="width" constant="263" id="RNd-Bu-U2X"/>
+                                            <constraint firstAttribute="height" constant="33" id="o4c-tP-MGB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KnV-hP-bQO">
-                                        <rect key="frame" x="0.0" y="41" width="197" height="238"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poke" translatesAutoresizingMaskIntoConstraints="NO" id="KnV-hP-bQO">
+                                        <rect key="frame" x="0.0" y="41" width="263" height="370"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="238" id="093-wW-hnn"/>
-                                            <constraint firstAttribute="width" constant="197" id="n00-GW-Ree"/>
+                                            <constraint firstAttribute="height" constant="370" id="Qcf-aj-h7G"/>
+                                            <constraint firstAttribute="width" constant="263" id="cvt-If-Za0"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lFH-Fx-Bfw">
-                                        <rect key="frame" x="0.0" y="287" width="197" height="115"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supertype" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-8J-CL6">
-                                                <rect key="frame" x="0.0" y="0.0" width="197" height="33"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="33" id="6l6-jR-Mqy"/>
-                                                    <constraint firstAttribute="width" constant="197" id="w9y-eG-r1Z"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtype" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKg-xp-kK4">
-                                                <rect key="frame" x="0.0" y="41" width="197" height="33"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="33" id="6zr-Xw-kgh"/>
-                                                    <constraint firstAttribute="width" constant="197" id="k0R-7A-5yl"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38G-ri-6uq">
-                                                <rect key="frame" x="0.0" y="82" width="197" height="33"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="197" id="pp8-QJ-ydm"/>
-                                                    <constraint firstAttribute="height" constant="33" id="xt1-Gb-AsM"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6pz-BB-5Af"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="daG-3J-evf" firstAttribute="centerX" secondItem="6pz-BB-5Af" secondAttribute="centerX" id="cnY-JF-6bj"/>
-                            <constraint firstItem="daG-3J-evf" firstAttribute="centerY" secondItem="6pz-BB-5Af" secondAttribute="centerY" constant="-17" id="gKH-bg-Lz1"/>
+                            <constraint firstItem="ceY-0Z-hBc" firstAttribute="centerX" secondItem="6pz-BB-5Af" secondAttribute="centerX" id="HzC-Dl-xv5"/>
+                            <constraint firstItem="ceY-0Z-hBc" firstAttribute="centerY" secondItem="6pz-BB-5Af" secondAttribute="centerY" constant="2.5" id="SST-Uu-nRJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aLi-mo-QD7"/>
                     <connections>
-                        <outlet property="pokeyHp" destination="38G-ri-6uq" id="IU0-hc-6xw"/>
                         <outlet property="pokeyImage" destination="KnV-hP-bQO" id="vXS-3I-CkR"/>
                         <outlet property="pokeyName" destination="yuA-Jd-xf5" id="pqT-RH-wMK"/>
-                        <outlet property="pokeySubtype" destination="LKg-xp-kK4" id="kGU-un-wTO"/>
-                        <outlet property="pokeySupertype" destination="gtZ-8J-CL6" id="8EE-pg-TTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCD-dX-68Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237.5" y="-32.5"/>
+            <point key="canvasLocation" x="1235.625" y="-33.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jwc-Jf-xrt">
@@ -211,6 +177,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="poke" width="320" height="320"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -15,32 +15,13 @@ class PokeyDetailViewController: UIViewController {
     
     @IBOutlet weak var pokeyImage: UIImageView!
     
-    @IBOutlet weak var pokeySupertype: UILabel!
-    
-    @IBOutlet weak var pokeySubtype: UILabel!
-    
-    @IBOutlet weak var pokeyHp: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if poke != nil{
-            pokeyImage.image = UIImage(named: poke.image)
-            pokeyName.text = poke.name
-            pokeySupertype.text = "Supertype: \(String(describing: poke.supertype))"
-            pokeySubtype.text = "Subtype: \(String(describing: poke.subtype))"
-            //pokeyHp.text = poke.hp
+        if let pokey = poke{
+            
+            self.pokeyImage.sd_setImage(with: URL(string: pokey.image), placeholderImage: UIImage(systemName: "poke.png"))
+            
+            self.pokeyName.text = pokey.name
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

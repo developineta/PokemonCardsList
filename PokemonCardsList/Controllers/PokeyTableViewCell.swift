@@ -24,7 +24,7 @@ class PokeyTableViewCell: UITableViewCell {
         nameLabel.text = "Name: " + withDataFrom.name
         hpLabel.text = "Card value: " + withDataFrom.number
         
-        self.pokeyImageView.sd_setImage(with: URL(string: withDataFrom.image), placeholderImage: UIImage(named: "pok.png"))
+        self.pokeyImageView.sd_setImage(with: URL(string: withDataFrom.image), placeholderImage: UIImage(named: "poke.png"))
         
         if let subtype = withDataFrom.subtype {
             subtypeLabel.text = "Card: " + subtype
